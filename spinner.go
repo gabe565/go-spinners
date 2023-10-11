@@ -11,3 +11,38 @@ type Spinner struct {
 	// Interval is the recommended interval for a spinner.
 	Interval time.Duration
 }
+
+// Reverse returns a new Spinner that plays backwards.
+func (s Spinner) Reverse() Spinner {
+	s.Frames = reverseFrames(s.Frames)
+	return s
+}
+
+// ReverseFrames makes a slice of frames play backwards.
+func reverseFrames[T any](frames []T) []T {
+	result := make([]T, len(frames))
+	copy(result, frames)
+	for i := 0; i < len(result)/2; i += 1 {
+		result[i], result[len(frames)-1-i] = result[len(frames)-1-i], result[i]
+	}
+	return result
+}
+
+// Boomerang returns a new Spinner that loops back and forth.
+func (s Spinner) Boomerang() Spinner {
+	s.Frames = boomerangFrames(s.Frames)
+	return s
+}
+
+// BoomerangFrames makes a slice of frames loop back and forth.
+func boomerangFrames[T any](frames []T) []T {
+	if len(frames) < 3 {
+		return frames
+	}
+	result := make([]T, len(frames), 2*len(frames)-2)
+	copy(result, frames)
+	for i := len(result) - 2; i > 0; i -= 1 {
+		result = append(result, result[i])
+	}
+	return result
+}

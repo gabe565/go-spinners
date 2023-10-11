@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestReverse(t *testing.T) {
+func Test_reverseFrames(t *testing.T) {
 	type args[T any] struct {
 		frames []T
 	}
@@ -24,14 +24,14 @@ func TestReverse(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := ReverseFrames(tt.args.frames); !reflect.DeepEqual(got, tt.want) {
+			if got := reverseFrames(tt.args.frames); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("ReverseFrames() = %v, want %v", got, tt.want)
 			}
 		})
 	}
 }
 
-func TestBoomerang(t *testing.T) {
+func Test_boomerangFrames(t *testing.T) {
 	type args[T any] struct {
 		frames []T
 	}
@@ -50,7 +50,7 @@ func TestBoomerang(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := BoomerangFrames(tt.args.frames); !reflect.DeepEqual(got, tt.want) {
+			if got := boomerangFrames(tt.args.frames); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("BoomerangFrames() = %v, want %v", got, tt.want)
 			}
 		})
