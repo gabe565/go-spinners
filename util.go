@@ -15,7 +15,7 @@ func BoomerangFrames[T any](frames []T) []T {
 	if len(frames) < 3 {
 		return frames
 	}
-	result := make([]T, len(frames))
+	result := make([]T, len(frames), 2*len(frames)-2)
 	copy(result, frames)
 	for i := len(result) - 2; i > 0; i -= 1 {
 		result = append(result, result[i])
