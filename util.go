@@ -1,6 +1,6 @@
 package spinner
 
-// ReverseFrames makes the spinner play backwards
+// ReverseFrames makes the spinner play backwards.
 func ReverseFrames[T any](frames []T) []T {
 	for i := 0; i < len(frames)/2; i += 1 {
 		frames[i], frames[len(frames)-1-i] = frames[len(frames)-1-i], frames[i]
@@ -8,7 +8,7 @@ func ReverseFrames[T any](frames []T) []T {
 	return frames
 }
 
-// BoomerangFrames makes the spinner loop back and forth
+// BoomerangFrames makes the spinner loop back and forth.
 func BoomerangFrames[T any](frames []T) []T {
 	if len(frames) < 3 {
 		return frames

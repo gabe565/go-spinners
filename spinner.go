@@ -2,7 +2,7 @@ package spinner
 
 import "time"
 
-// Spinner defines a command-line spinner
+// Spinner defines a command-line spinner.
 type Spinner struct {
 	// Frames is a list of frames for a spinner.
 	Frames []string
