@@ -1,0 +1,36 @@
+name: Generate
+
+on:
+  push:
+    branches:
+      - renovate/**
+
+jobs:
+  lint:
+    name: Generate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version-file: go.mod
+          cache: false
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: internal/generate/.nvmrc
+      - name: Generate
+        run: go generate
+      - name: Lint
+        uses: golangci/golangci-lint-action@v3
+        with:
+          args: --timeout=5m
+      - run: go test ./...
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore: Generate code"
