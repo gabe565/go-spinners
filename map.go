@@ -2,6 +2,8 @@
 
 package spinner
 
+// Map is a map of all spinners.
+// It allows an app to embed all spinners and let the user configure their favorite.
 var Map = map[string]Spinner{
 	"dots":                Dots,
 	"dots2":               Dots2,
