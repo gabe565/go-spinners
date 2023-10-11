@@ -96,6 +96,7 @@ func generateSpinners() ([]string, error) {
 			group.Id(capitalizeFirst(raw.Name)).Op("=").
 				Id("Spinner").
 				Values(Dict{
+					Id("Name"): Lit(raw.Name),
 					Id("Frames"): Index().String().ValuesFunc(func(group *Group) {
 						for _, frame := range raw.Frames {
 							group.Lit(frame)
