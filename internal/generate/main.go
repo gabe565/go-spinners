@@ -49,6 +49,10 @@ func generate() error {
 		return err
 	}
 
+	if err := generateSlice(spinners); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -138,6 +142,32 @@ func generateMap(spinners []string) error {
 	})
 
 	out, err := os.Create(filepath.Join(dst, "map.go"))
+	if err != nil {
+		return err
+	}
+	defer func() {
+		_ = out.Close()
+	}()
+
+	if err := f.Render(out); err != nil {
+		return err
+	}
+
+	return out.Close()
+}
+
+func generateSlice(spinners []string) error {
+	slog.Info("Generating slice.go")
+
+	f := newFile()
+	f.Comment(`// Slice contains all Spinner vars in order.`)
+	f.Var().Id("Slice").Op("=").Index().Id("Spinner").BlockFunc(func(group *Group) {
+		for _, spinner := range spinners {
+			group.Id(capitalizeFirst(spinner)).Op(",")
+		}
+	})
+
+	out, err := os.Create(filepath.Join(dst, "slice.go"))
 	if err != nil {
 		return err
 	}
