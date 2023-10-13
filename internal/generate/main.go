@@ -129,8 +129,8 @@ func generateMap(spinners []string) error {
 	slog.Info("Generating map.go")
 
 	f := newFile()
-	f.Comment(`// Map is a map of all spinners.
-// It allows an app to embed all spinners and let the user configure their favorite.`)
+	f.Comment(`// Map contains all Spinner vars, with the key being the Spinner name.
+// It allows an app to embed every Spinner, and let the user configure their favorite.`)
 	f.Var().Id("Map").Op("=").Map(String()).Id("Spinner").BlockFunc(func(group *Group) {
 		for _, spinner := range spinners {
 			group.Lit(spinner).Op(":").Id(capitalizeFirst(spinner)).Op(",")
