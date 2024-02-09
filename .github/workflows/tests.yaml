@@ -14,7 +14,7 @@ jobs:
         with:
           go-version-file: go.mod
       - name: Lint
-        uses: golangci/golangci-lint-action@v3
+        uses: golangci/golangci-lint-action@v4
         with:
           args: --timeout=5m
 
