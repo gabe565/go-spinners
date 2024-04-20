@@ -6,7 +6,7 @@ on:
       - renovate/**
 
 jobs:
-  lint:
+  generate:
     name: Generate
     runs-on: ubuntu-latest
     permissions:

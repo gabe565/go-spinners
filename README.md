@@ -1,6 +1,6 @@
 # go-spinners
 
-[![Tests](https://github.com/gabe565/go-spinners/actions/workflows/tests.yaml/badge.svg)](https://github.com/gabe565/go-spinners/actions/workflows/tests.yaml)
+[![Build](https://github.com/gabe565/go-spinners/actions/workflows/build.yaml/badge.svg)](https://github.com/gabe565/go-spinners/actions/workflows/build.yaml)
 
 70+ spinners for use in terminal Go apps.
 
