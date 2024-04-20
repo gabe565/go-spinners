@@ -1,8 +1,9 @@
 package spinner
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_reverseFrames(t *testing.T) {
@@ -26,9 +27,7 @@ func Test_reverseFrames(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			if got := reverseFrames(tt.args.frames); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("ReverseFrames() = %v, want %v", got, tt.want)
-			}
+			assert.Equal(t, tt.want, reverseFrames(tt.args.frames))
 		})
 	}
 }
@@ -54,9 +53,7 @@ func Test_boomerangFrames(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			if got := boomerangFrames(tt.args.frames); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("BoomerangFrames() = %v, want %v", got, tt.want)
-			}
+			assert.Equal(t, tt.want, boomerangFrames(tt.args.frames))
 		})
 	}
 }
