@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/gabe565/go-spinners"
+	spinner "github.com/gabe565/go-spinners"
 )
 
 func main() {

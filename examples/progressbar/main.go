@@ -5,7 +5,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/gabe565/go-spinners"
+	spinner "github.com/gabe565/go-spinners"
 	"github.com/schollz/progressbar/v3"
 )
 
@@ -25,8 +25,8 @@ func main() {
 		progressbar.OptionFullWidth(),
 		progressbar.OptionSetRenderBlankState(true),
 	)
-	for i := 0; i < 1000; i++ {
-		bar.Add(1)
+	for range 1000 {
+		_ = bar.Add(1)
 		time.Sleep(5 * time.Millisecond)
 	}
 }

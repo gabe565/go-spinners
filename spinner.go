@@ -22,7 +22,7 @@ func (s Spinner) Reverse() Spinner {
 func reverseFrames[T any](frames []T) []T {
 	result := make([]T, len(frames))
 	copy(result, frames)
-	for i := 0; i < len(result)/2; i += 1 {
+	for i := range len(result) / 2 {
 		result[i], result[len(frames)-1-i] = result[len(frames)-1-i], result[i]
 	}
 	return result
@@ -41,7 +41,7 @@ func boomerangFrames[T any](frames []T) []T {
 	}
 	result := make([]T, len(frames), 2*len(frames)-2)
 	copy(result, frames)
-	for i := len(result) - 2; i > 0; i -= 1 {
+	for i := len(result) - 2; i > 0; i-- {
 		result = append(result, result[i])
 	}
 	return result

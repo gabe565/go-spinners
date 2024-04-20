@@ -6,6 +6,7 @@ import (
 )
 
 func Test_reverseFrames(t *testing.T) {
+	t.Parallel()
 	type args[T any] struct {
 		frames []T
 	}
@@ -24,6 +25,7 @@ func Test_reverseFrames(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
 			if got := reverseFrames(tt.args.frames); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("ReverseFrames() = %v, want %v", got, tt.want)
 			}
@@ -32,6 +34,7 @@ func Test_reverseFrames(t *testing.T) {
 }
 
 func Test_boomerangFrames(t *testing.T) {
+	t.Parallel()
 	type args[T any] struct {
 		frames []T
 	}
@@ -50,6 +53,7 @@ func Test_boomerangFrames(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
 			if got := boomerangFrames(tt.args.frames); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("BoomerangFrames() = %v, want %v", got, tt.want)
 			}

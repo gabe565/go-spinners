@@ -8,7 +8,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/gabe565/go-spinners"
+	spinner "github.com/gabe565/go-spinners"
 )
 
 func main() {
@@ -60,7 +60,7 @@ func animate(ctx context.Context, sp spinner.Spinner) {
 			return
 		default:
 			fmt.Print("\r\x1B[K  " + sp.Frames[frame] + " " + sp.Name)
-			frame += 1
+			frame++
 			frame %= len(sp.Frames)
 			select {
 			case <-ctx.Done():

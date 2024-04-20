@@ -6,6 +6,7 @@ import (
 	"bytes"
 	_ "embed"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"log/slog"
 	"os"
@@ -13,25 +14,25 @@ import (
 	"runtime"
 	"strings"
 
-	. "github.com/dave/jennifer/jen"
+	. "github.com/dave/jennifer/jen" //nolint:revive,stylecheck
 )
 
 var (
 	//go:embed node_modules/cli-spinners/spinners.json
-	spinnerJson []byte
+	spinnerJSON []byte
 
-	dst string
+	dst string //nolint:gochecknoglobals
 )
 
 type rawSpinner struct {
-	Name     string
-	Interval int
-	Frames   []string
+	Name     string   `json:"name"`
+	Interval int      `json:"interval"`
+	Frames   []string `json:"frames"`
 }
 
 func main() {
 	if err := generate(); err != nil {
-		fmt.Println(err.Error())
+		slog.Error(err.Error())
 		os.Exit(1)
 	}
 }
@@ -62,13 +63,18 @@ func newFile() *File {
 	return f
 }
 
+var (
+	ErrExpectedObject = errors.New("expected object")
+	ErrInvalidKey     = errors.New("invalid key")
+)
+
 func generateSpinners() ([]string, error) {
 	slog.Info("Generating spinners.go")
 
-	decoder := json.NewDecoder(bytes.NewReader(spinnerJson))
+	decoder := json.NewDecoder(bytes.NewReader(spinnerJSON))
 	tok, err := decoder.Token()
 	if err != nil || tok != json.Delim('{') {
-		return []string{}, fmt.Errorf("expected object")
+		return []string{}, ErrExpectedObject
 	}
 
 	var spinnerSlice []rawSpinner
@@ -86,7 +92,7 @@ func generateSpinners() ([]string, error) {
 		var ok bool
 		raw.Name, ok = key.(string)
 		if !ok {
-			return []string{}, fmt.Errorf("invalid key")
+			return []string{}, fmt.Errorf("%w: %v", ErrInvalidKey, key)
 		}
 
 		spinnerSlice = append(spinnerSlice, raw)
