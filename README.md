@@ -1,6 +1,7 @@
 # go-spinners
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/gabe565/go-spinners)](https://github.com/gabe565/go-spinners/releases)
 [![Build](https://github.com/gabe565/go-spinners/actions/workflows/build.yaml/badge.svg)](https://github.com/gabe565/go-spinners/actions/workflows/build.yaml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/gabe565/go-spinners)](https://goreportcard.com/report/github.com/gabe565/go-spinners)
 
 70+ spinners for use in terminal Go apps.
 
