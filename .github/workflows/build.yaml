@@ -21,7 +21,7 @@ jobs:
       - name: Generate
         run: go generate
       - name: Lint
-        uses: golangci/golangci-lint-action@v4
+        uses: golangci/golangci-lint-action@v5
 
   test:
     name: Test
