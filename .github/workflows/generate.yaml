@@ -26,7 +26,7 @@ jobs:
       - name: Generate
         run: go generate
       - name: Lint
-        uses: golangci/golangci-lint-action@v5
+        uses: golangci/golangci-lint-action@v6
         with:
           args: --timeout=5m
       - run: go test ./...
