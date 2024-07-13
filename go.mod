@@ -1,6 +1,6 @@
 module github.com/gabe565/go-spinners
 
-go 1.22.2
+go 1.22.5
 
 require (
 	github.com/dave/jennifer v1.7.0
