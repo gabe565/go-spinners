@@ -27,7 +27,9 @@ func Test_reverseFrames(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			assert.Equal(t, tt.want, reverseFrames(tt.args.frames))
+			f := reverseFrames(tt.args.frames)
+			assert.Equal(t, tt.want, f)
+			assert.Equal(t, len(f), cap(f), "len == cap")
 		})
 	}
 }
@@ -53,7 +55,9 @@ func Test_boomerangFrames(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			assert.Equal(t, tt.want, boomerangFrames(tt.args.frames))
+			f := boomerangFrames(tt.args.frames)
+			assert.Equal(t, tt.want, f)
+			assert.Equal(t, len(f), cap(f), "len == cap")
 		})
 	}
 }
