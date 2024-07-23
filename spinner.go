@@ -21,9 +21,8 @@ func (s Spinner) Reverse() Spinner {
 // ReverseFrames makes a slice of frames play backwards.
 func reverseFrames[T any](frames []T) []T {
 	result := make([]T, len(frames))
-	copy(result, frames)
-	for i := range len(result) / 2 {
-		result[i], result[len(frames)-1-i] = result[len(frames)-1-i], result[i]
+	for i := range len(result) {
+		result[i] = frames[len(frames)-1-i]
 	}
 	return result
 }
