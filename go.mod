@@ -3,7 +3,7 @@ module github.com/gabe565/go-spinners
 go 1.22.5
 
 require (
-	github.com/dave/jennifer v1.7.0
+	github.com/dave/jennifer v1.7.1
 	github.com/schollz/progressbar/v3 v3.14.4
 	github.com/stretchr/testify v1.9.0
 )
