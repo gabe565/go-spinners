@@ -19,6 +19,7 @@ var Slice = []Spinner{
 	Dots13,
 	Dots14,
 	Dots8Bit,
+	DotsCircle,
 	Sand,
 	Line,
 	Line2,
