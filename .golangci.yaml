@@ -17,19 +17,20 @@ linters-settings:
 
 linters:
   enable:
+
     - asasalint
     - asciicheck
     - bidichk
     - bodyclose
     - copyloopvar
+    - copyloopvar
     - decorder
     - dupl
     - durationcheck
+    - err113
     - errcheck
     - errname
     - errorlint
-    - execinquery
-    - exportloopref
     - forbidigo
     - gci
     - ginkgolinter
@@ -41,7 +42,6 @@ linters:
     - gocritic
     - gocyclo
     - godox
-    - goerr113
     - gofumpt
     - goheader
     - goimports
