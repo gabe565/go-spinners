@@ -95,6 +95,12 @@ var (
 		Name:     "dots8Bit",
 	}
 
+	DotsCircle = Spinner{
+		Frames:   []string{"⢎ ", "⠎⠁", "⠊⠑", "⠈⠱", " ⡱", "⢀⡰", "⢄⡠", "⢆⡀"},
+		Interval: 80 * time.Millisecond,
+		Name:     "dotsCircle",
+	}
+
 	Sand = Spinner{
 		Frames:   []string{"⠁", "⠂", "⠄", "⡀", "⡈", "⡐", "⡠", "⣀", "⣁", "⣂", "⣄", "⣌", "⣔", "⣤", "⣥", "⣦", "⣮", "⣶", "⣷", "⣿", "⡿", "⠿", "⢟", "⠟", "⡛", "⠛", "⠫", "⢋", "⠋", "⠍", "⡉", "⠉", "⠑", "⠡", "⢁"},
 		Interval: 80 * time.Millisecond,

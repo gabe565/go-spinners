@@ -20,6 +20,7 @@ var Map = map[string]Spinner{
 	"dots13":              Dots13,
 	"dots14":              Dots14,
 	"dots8Bit":            Dots8Bit,
+	"dotsCircle":          DotsCircle,
 	"sand":                Sand,
 	"line":                Line,
 	"line2":               Line2,
