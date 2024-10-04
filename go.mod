@@ -4,7 +4,7 @@ go 1.22
 
 require (
 	github.com/dave/jennifer v1.7.1
-	github.com/schollz/progressbar/v3 v3.16.0
+	github.com/schollz/progressbar/v3 v3.16.1
 	github.com/stretchr/testify v1.9.0
 )
 
