@@ -1,4 +1,4 @@
-module github.com/gabe565/go-spinners
+module gabe565.com/spinners
 
 go 1.22
 

@@ -8,7 +8,7 @@ import (
 	"syscall"
 	"time"
 
-	spinner "github.com/gabe565/go-spinners"
+	spinner "gabe565.com/spinners"
 )
 
 func main() {

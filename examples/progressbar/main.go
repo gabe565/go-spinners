@@ -5,7 +5,7 @@ import (
 	"os"
 	"time"
 
-	spinner "github.com/gabe565/go-spinners"
+	spinner "gabe565.com/spinners"
 	"github.com/schollz/progressbar/v3"
 )
 

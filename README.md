@@ -16,7 +16,7 @@ Intended to be used with [schollz/progressbar](https://github.com/schollz/progre
 ## Installation
 
 ```shell
-go get github.com/gabe565/go-spinners
+go get gabe565.com/spinners
 ```
 
 ## Usage
