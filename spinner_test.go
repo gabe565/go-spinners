@@ -1,9 +1,8 @@
 package spinner
 
 import (
+	"slices"
 	"testing"
-
-	"github.com/stretchr/testify/assert"
 )
 
 func Test_reverseFrames(t *testing.T) {
@@ -27,9 +26,13 @@ func Test_reverseFrames(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			f := reverseFrames(tt.args.frames)
-			assert.Equal(t, tt.want, f)
-			assert.Equal(t, len(f), cap(f), "len == cap")
+			got := reverseFrames(tt.args.frames)
+			if !slices.Equal(got, tt.want) {
+				t.Errorf("reverseFrames() = %v, want %v", got, tt.want)
+			}
+			if len(got) != cap(got) {
+				t.Errorf("cap(reverseFrames()) = %v, want %v", cap(got), len(got))
+			}
 		})
 	}
 }
@@ -55,9 +58,13 @@ func Test_boomerangFrames(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			f := boomerangFrames(tt.args.frames)
-			assert.Equal(t, tt.want, f)
-			assert.Equal(t, len(f), cap(f), "len == cap")
+			got := boomerangFrames(tt.args.frames)
+			if !slices.Equal(got, tt.want) {
+				t.Errorf("boomerangFrames() = %v, want %v", got, tt.want)
+			}
+			if len(got) != cap(got) {
+				t.Errorf("cap(boomerangFrames()) = %v, want %v", cap(got), len(got))
+			}
 		})
 	}
 }

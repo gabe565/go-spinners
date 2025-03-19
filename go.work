@@ -1,0 +1,10 @@
+go 1.22
+
+use (
+	.
+	./examples/demo
+	./examples/progressbar
+	./examples/random
+	./examples/simple
+	./internal/generate
+)

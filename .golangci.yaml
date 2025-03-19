@@ -3,11 +3,6 @@ run:
 
 issues:
   max-same-issues: 50
-  exclude-dirs-use-default: false
-  exclude-rules:
-    - path: "examples"
-      linters:
-        - forbidigo
 
 linters-settings:
   gosec:
