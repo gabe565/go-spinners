@@ -16,13 +16,13 @@ linters:
     - asciicheck
     - bidichk
     - bodyclose
+    - copyloopvar
     - decorder
     - dupl
     - durationcheck
     - errcheck
     - errname
     - errorlint
-    - exportloopref
     - forbidigo
     - gci
     - ginkgolinter
@@ -34,7 +34,7 @@ linters:
     - gocritic
     - gocyclo
     - godox
-    - goerr113
+    - err113
     - gofumpt
     - goheader
     - goimports
@@ -76,7 +76,6 @@ linters:
     - sqlclosecheck
     - staticcheck
     - stylecheck
-    - tenv
     - testableexamples
     - testifylint
     - typecheck
@@ -84,6 +83,7 @@ linters:
     - unparam
     - unused
     - usestdlibvars
+    - usetesting
     - wastedassign
     - whitespace
     - zerologlint
