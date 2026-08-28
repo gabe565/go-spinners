@@ -23,6 +23,7 @@ var Slice = []Spinner{
 	Sand,
 	Line,
 	Line2,
+	RollingLine,
 	Pipe,
 	SimpleDots,
 	SimpleDotsScrolling,
@@ -92,4 +93,5 @@ var Slice = []Spinner{
 	TimeTravel,
 	Aesthetic,
 	DwarfFortress,
+	Fish,
 }

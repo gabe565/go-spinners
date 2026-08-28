@@ -24,6 +24,7 @@ var Map = map[string]Spinner{
 	"sand":                Sand,
 	"line":                Line,
 	"line2":               Line2,
+	"rollingLine":         RollingLine,
 	"pipe":                Pipe,
 	"simpleDots":          SimpleDots,
 	"simpleDotsScrolling": SimpleDotsScrolling,
@@ -93,4 +94,5 @@ var Map = map[string]Spinner{
 	"timeTravel":          TimeTravel,
 	"aesthetic":           Aesthetic,
 	"dwarfFortress":       DwarfFortress,
+	"fish":                Fish,
 }
